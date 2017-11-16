@@ -119,14 +119,6 @@ def makeWebhookResult(data):
         "source": "apiai-weather-webhook-sample"
     }
 
-
-if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
-
-    print("Starting app on port %d" % port)
-
-    app.run(debug=False, port=port, host='0.0.0.0')
-
 def makeWebhookResultForGetJoke(data):
     valueString = data.get('value')
     joke = valueString.get('joke')
@@ -139,3 +131,11 @@ def makeWebhookResultForGetJoke(data):
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
     }
+
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))
+
+    print("Starting app on port %d" % port)
+
+    app.run(debug=False, port=port, host='0.0.0.0')
+
