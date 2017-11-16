@@ -126,3 +126,16 @@ if __name__ == '__main__':
     print("Starting app on port %d" % port)
 
     app.run(debug=False, port=port, host='0.0.0.0')
+
+def makeWebhookResultForGetJoke(data):
+    valueString = data.get('value')
+    joke = valueString.get('joke')
+    speechText = joke
+    displayText = joke
+    return {
+        "speech": speechText,
+        "displayText": displayText,
+        # "data": data,
+        # "contextOut": [],
+        "source": "apiai-weather-webhook-sample"
+    }
